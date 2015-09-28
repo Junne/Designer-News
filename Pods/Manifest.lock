@@ -1,0 +1,33 @@
+PODS:
+  - Alamofire (2.0.1)
+  - Spring (1.0.3)
+  - SwiftyJSON (2.3.0)
+  - TPKeyboardAvoiding (1.2.9)
+
+DEPENDENCIES:
+  - Alamofire (~> 2.0)
+  - Spring (from `https://github.com/MengTo/Spring.git`)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+  - TPKeyboardAvoiding
+
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 29c1a2743451ba72a9992e2f750396701b1da6ad
+    :git: https://github.com/MengTo/Spring.git
+  SwiftyJSON:
+    :commit: 3b5d0d4e0c19173b1bf0dc823bde25ad870f70c0
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  Alamofire: 1d8e208d616fbbfd2391b15eae766d07c96cdc49
+  Spring: 3f02b5dc3308572ef177b3cad0fa7bbc4b0706f7
+  SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
+  TPKeyboardAvoiding: ff1ee4e5a5a0c119b965552af8f183868ea20207
+
+COCOAPODS: 0.38.2
