@@ -14,7 +14,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    @IBAction func menuButtonDidTouch(sender: AnyObject) {
+        performSegueWithIdentifier("MenuSegue", sender: self)
+    }
 
+    @IBAction func loginButtonDidTouch(sender: AnyObject) {
+        performSegueWithIdentifier("LoginSegue", sender: self)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
