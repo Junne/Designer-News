@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Spring
 
 protocol StoryTableViewCellDelegate: class {
     func storyTableViewCellDidTouchUpvote(cell: StoryTableViewCell, sender: AnyObject)
@@ -15,6 +16,12 @@ protocol StoryTableViewCellDelegate: class {
 
 class StoryTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var badgeImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var avatarImageView: AsyncImageView!
+    @IBOutlet weak var upvoteButton: SpringButton!
+    @IBOutlet weak var commentButton: SpringButton!
     
 
 }
