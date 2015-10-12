@@ -10,6 +10,8 @@
             <string>AvenirNext-Medium</string>
             <string>AvenirNext-Medium</string>
             <string>AvenirNext-Medium</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -154,7 +156,7 @@
                                                                 <constraint firstAttribute="height" constant="44" id="8ed-g5-hhG"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                            <textInputTraits key="textInputTraits"/>
+                                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
                                                                     <real key="value" value="50"/>
@@ -305,6 +307,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qup-Ed-E0O">
                                         <rect key="frame" x="0.0" y="140" width="140" height="140"/>
                                         <state key="normal" image="big-credits"/>
+                                        <connections>
+                                            <segue destination="nex-zl-RDw" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="yBG-OS-QeX"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdH-rx-fIM">
                                         <rect key="frame" x="140" y="140" width="140" height="140"/>
@@ -366,21 +371,152 @@
                     <connections>
                         <outlet property="dialogView" destination="0xV-Ae-GkL" id="yFU-rg-GQr"/>
                         <outlet property="loginLabel" destination="LNl-9m-Nov" id="UOh-wD-VCQ"/>
+                        <segue destination="n0B-bT-Fhg" kind="presentation" identifier="LoginSegue" id="ziX-0o-X7u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FBn-gr-yPR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="896" y="1104"/>
+            <point key="canvasLocation" x="721" y="1049"/>
+        </scene>
+        <!--Learn View Controller-->
+        <scene sceneID="qan-oz-6vb">
+            <objects>
+                <viewController id="nex-zl-RDw" customClass="LearnViewController" customModule="DesignerNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="29b-Mb-ZhD"/>
+                        <viewControllerLayoutGuide type="bottom" id="dCB-dG-occ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hfK-9b-qY1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzp-D1-FLc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="AK6-Nz-9se">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1YQ-0a-Ouk">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <connections>
+                                    <action selector="closeButtonDidTouch:" destination="nex-zl-RDw" eventType="touchUpInside" id="6wQ-dY-3gA"/>
+                                </connections>
+                            </button>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzk-Gx-xvh" userLabel="Dialog View" customClass="DesignableView" customModule="Spring">
+                                <rect key="frame" x="20" y="144" width="280" height="280"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg-credits" translatesAutoresizingMaskIntoConstraints="NO" id="tPB-Wd-amy">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="140"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-book" translatesAutoresizingMaskIntoConstraints="NO" id="646-Cw-hnK" customClass="SpringImageView" customModule="Spring">
+                                        <rect key="frame" x="78" y="18" width="125" height="122"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideDown"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                <real key="value" value="0.20000000000000001"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-sketch" translatesAutoresizingMaskIntoConstraints="NO" id="YiO-je-KSD" customClass="SpringImageView" customModule="Spring">
+                                        <rect key="frame" x="23" y="39" width="64" height="60"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideRight"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                                <real key="value" value="0.29999999999999999"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-xcode" translatesAutoresizingMaskIntoConstraints="NO" id="uiL-jo-OYa" customClass="SpringImageView" customModule="Spring">
+                                        <rect key="frame" x="208" y="39" width="64" height="60"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideLeft"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXc-zd-8L4">
+                                        <rect key="frame" x="0.0" y="140" width="280" height="70"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                        <state key="normal" title="Learn Sketch + Swift">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="learnButtonDidTouch:" destination="nex-zl-RDw" eventType="touchUpInside" id="Us0-VQ-4ia"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5D-hz-ECz">
+                                        <rect key="frame" x="0.0" y="210" width="280" height="70"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                        <state key="normal" title="@MengTo" image="icon-twitter">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="twitterButtonDidTouch:" destination="nex-zl-RDw" eventType="touchUpInside" id="JVe-Mt-S1B"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="Gik-k6-mUC"/>
+                                    <constraint firstAttribute="height" constant="280" id="I5u-YT-YcP"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="zoomIn"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autohide" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yzk-Gx-xvh" firstAttribute="centerY" secondItem="nzp-D1-FLc" secondAttribute="centerY" id="414-I7-hF0"/>
+                            <constraint firstItem="dCB-dG-occ" firstAttribute="top" secondItem="1YQ-0a-Ouk" secondAttribute="bottom" id="5Bc-Y8-DBZ"/>
+                            <constraint firstItem="nzp-D1-FLc" firstAttribute="leading" secondItem="hfK-9b-qY1" secondAttribute="leading" id="6Hg-sZ-26X"/>
+                            <constraint firstItem="1YQ-0a-Ouk" firstAttribute="leading" secondItem="hfK-9b-qY1" secondAttribute="leading" id="HTe-FK-Eue"/>
+                            <constraint firstItem="nzp-D1-FLc" firstAttribute="top" secondItem="hfK-9b-qY1" secondAttribute="top" id="T0x-dL-Qhw"/>
+                            <constraint firstAttribute="trailing" secondItem="1YQ-0a-Ouk" secondAttribute="trailing" id="V4k-b5-B6J"/>
+                            <constraint firstItem="dCB-dG-occ" firstAttribute="top" secondItem="nzp-D1-FLc" secondAttribute="bottom" id="YQF-Ru-qwv"/>
+                            <constraint firstAttribute="trailing" secondItem="nzp-D1-FLc" secondAttribute="trailing" id="gA4-f1-7AB"/>
+                            <constraint firstItem="Yzk-Gx-xvh" firstAttribute="centerX" secondItem="nzp-D1-FLc" secondAttribute="centerX" id="ibR-qe-GBX"/>
+                            <constraint firstItem="1YQ-0a-Ouk" firstAttribute="top" secondItem="hfK-9b-qY1" secondAttribute="top" id="v0p-Su-aY2"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="bookImageView" destination="646-Cw-hnK" id="FcD-36-4Ce"/>
+                        <outlet property="dialogView" destination="Yzk-Gx-xvh" id="nUT-ho-J1f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8u9-mH-cJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1085" y="1049"/>
         </scene>
     </scenes>
     <resources>
+        <image name="bg-credits" width="280" height="140"/>
         <image name="big-credits" width="47" height="44"/>
         <image name="big-login" width="38" height="38"/>
         <image name="big-recent" width="36" height="36"/>
         <image name="big-top" width="41" height="39"/>
+        <image name="icon-book" width="125" height="122"/>
         <image name="icon-hamburger" width="22" height="16"/>
         <image name="icon-mail" width="26" height="18"/>
         <image name="icon-password" width="25" height="25"/>
+        <image name="icon-sketch" width="64" height="61"/>
+        <image name="icon-twitter" width="18" height="14"/>
+        <image name="icon-xcode" width="64" height="59"/>
         <image name="input-outline" width="7" height="44"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ziX-0o-X7u"/>
+    </inferredMetricsTieBreakers>
 </document>

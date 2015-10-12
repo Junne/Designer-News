@@ -24,8 +24,13 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if LocalStore.getToken() == nil {
+            loginLabel.text = "Login"
+        } else {
+            loginLabel.text = "Logout"
+        }
 
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func closeButtonDidTouch(sender: AnyObject) {
@@ -45,8 +50,15 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func loginButtonDidTouch(sender: AnyObject) {
-        delegate?.menuViewControllerDidTouchLogout(self)
-        closeButtonDidTouch(sender)
+        
+        if LocalStore.getToken() == nil {
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        } else {
+            LocalStore.deleteToken()
+            delegate?.menuViewControllerDidTouchLogout(self)
+            closeButtonDidTouch(sender)
+        }
+
     }
     
     override func didReceiveMemoryWarning() {
