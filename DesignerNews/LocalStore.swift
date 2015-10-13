@@ -28,6 +28,10 @@ struct LocalStore {
         appendId(storyId, toKey: "upvotedStoriesKey")
     }
     
+    static func saveUpvotedComment(commentId: Int) {
+        appendId(commentId, toKey: "upvotedCommentsKey")
+    }
+    
     static func isStoryUpvoted(storyId: Int) -> Bool {
         return arrayForKey("upvotedStoriedsKey", containsId: storyId)
     }

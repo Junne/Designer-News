@@ -20,6 +20,7 @@ class ViewController: UITableViewController, LoginViewControllerDelegate, StoryT
     @IBOutlet weak var login: UIBarButtonItem!
     
     func refreshStories() {
+        self.refreshControl?.showLoading()
         loadStories(section, page: 1)
     }
     
@@ -50,10 +51,11 @@ class ViewController: UITableViewController, LoginViewControllerDelegate, StoryT
         loadStories("", page: 1)
         
         refreshControl?.addTarget(self, action: "refreshStories", forControlEvents: UIControlEvents.ValueChanged)
+        
         navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
+        
         login.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
         
-        refreshControl?.addTarget(self, action: "refreshStories", forControlEvents: UIControlEvents.ValueChanged)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -101,6 +103,35 @@ class ViewController: UITableViewController, LoginViewControllerDelegate, StoryT
 }
 
 extension ViewController {
+    
+    // MARK: Misc
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "CommentsSegue" {
+            let toView = segue.destinationViewController as! CommentsTableViewController
+            let indexPath = tableView.indexPathForCell(sender as! UITableViewCell)!
+            toView.story = stories[indexPath.row]
+        }
+        if segue.identifier == "WebSegue" {
+//            let toView = segue.destinationViewController as! WebViewController
+//            let indexPath = sender as! NSIndexPath
+//            let url = stories[indexPath.row]["url"].string!
+//            toView.url = url
+//            
+//            UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
+//            
+//            toView.transitioningDelegate = transitionManager
+        }
+        if segue.identifier == "MenuSegue" {
+            let toView = segue.destinationViewController as! MenuViewController
+//            toView.delegate = self
+        }
+        if segue.identifier == "LoginSegue" {
+            let toView = segue.destinationViewController as! LoginViewController
+            toView.delegate = self
+        }
+    }
+    
     // MARK: StoryTableViewCellDelegate
     func storyTableViewCellDidTouchUpvote(cell: StoryTableViewCell, sender: AnyObject) {
         if let token = LocalStore.getToken() {
@@ -119,7 +150,7 @@ extension ViewController {
     }
     
     func storyTableViewCellDidTouchComment(cell: StoryTableViewCell, sender: AnyObject) {
-//        performSegueWithIdentifier("CommentsSegue", sender: cell)
+        performSegueWithIdentifier("CommentsSegue", sender: cell)
     }
     
     // MARK: LoginViewControllerDelegate

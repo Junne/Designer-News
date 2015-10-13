@@ -23,6 +23,7 @@ class StoryTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: AsyncImageView!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var upvoteButton: SpringButton!
+    @IBOutlet weak var commentTextView: AutoTextView!
     @IBOutlet weak var commentButton: SpringButton!
     weak var delegate: StoryTableViewCellDelegate?
     
@@ -54,7 +55,8 @@ class StoryTableViewCell: UITableViewCell {
         let createdAt = story["created_at"].string!
         let voteCount = story["vote_count"].int!
         let commentCount = story["comment_count"].int!
-//        let comment = story["comment"].string ?? ""
+        let comment = story["comment"].string ?? ""
+        //        let commentHTML = story["comment_html"].string ?? ""
         
         titleLabel.text = title
         badgeImageView.image = UIImage(named: "badge-" + badge)
@@ -64,6 +66,11 @@ class StoryTableViewCell: UITableViewCell {
         timeLabel.text = timeAgoSinceDate(dateFromString(createdAt, format: "yyyy-MM-dd'T'HH:mm:ssZ"), numericDates: true)
         upvoteButton.setTitle(String(voteCount), forState: UIControlState.Normal)
         commentButton.setTitle(String(commentCount), forState: UIControlState.Normal)
+        
+        if let commentTextView = commentTextView {
+            commentTextView.text = comment
+            //            commentTextView.attributedText = htmlToAttributedString(commentHTML + "<style>*{font-family:\"Avenir Next\";font-size:16px;line-height:20px}img{max-width:300px}</style>")
+        }
         
         let storyId = story["id"].int!
         if LocalStore.isStoryUpvoted(storyId) {

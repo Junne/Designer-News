@@ -11,6 +11,8 @@
 		F50769CA1BC8FAFA00A03297 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50769C91BC8FAFA00A03297 /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F55C0E661BCC93CA0078A368 /* refresh.wav in Resources */ = {isa = PBXBuildFile; fileRef = F55C0E641BCC93CA0078A368 /* refresh.wav */; settings = {ASSET_TAGS = (); }; };
 		F55C0E671BCC93CA0078A368 /* upvote.wav in Resources */ = {isa = PBXBuildFile; fileRef = F55C0E651BCC93CA0078A368 /* upvote.wav */; settings = {ASSET_TAGS = (); }; };
+		F55C0E691BCCD7060078A368 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55C0E681BCCD7060078A368 /* CommentsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F55C0E6B1BCCE8070078A368 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55C0E6A1BCCE8070078A368 /* CommentTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		F56B2A111BB8D5FF00392F1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B2A101BB8D5FF00392F1D /* AppDelegate.swift */; };
 		F56B2A131BB8D5FF00392F1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B2A121BB8D5FF00392F1D /* ViewController.swift */; };
 		F56B2A161BB8D5FF00392F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56B2A141BB8D5FF00392F1D /* Main.storyboard */; };
@@ -49,6 +51,8 @@
 		F50769C91BC8FAFA00A03297 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		F55C0E641BCC93CA0078A368 /* refresh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = refresh.wav; sourceTree = "<group>"; };
 		F55C0E651BCC93CA0078A368 /* upvote.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = upvote.wav; sourceTree = "<group>"; };
+		F55C0E681BCCD7060078A368 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
+		F55C0E6A1BCCE8070078A368 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		F56B2A0D1BB8D5FF00392F1D /* DesignerNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignerNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56B2A101BB8D5FF00392F1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56B2A121BB8D5FF00392F1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				F582F23A1BCB4EBF0084FF1D /* DNService.swift */,
 				F56B2A121BB8D5FF00392F1D /* ViewController.swift */,
 				F57446FB1BCBA925004D837F /* StoryTableViewCell.swift */,
+				F55C0E681BCCD7060078A368 /* CommentsTableViewController.swift */,
+				F55C0E6A1BCCE8070078A368 /* CommentTableViewCell.swift */,
 				F50769C91BC8FAFA00A03297 /* MenuViewController.swift */,
 				F57446F91BCB86D7004D837F /* LearnViewController.swift */,
 				F56B2A141BB8D5FF00392F1D /* Main.storyboard */,
@@ -371,7 +377,9 @@
 				F56B2A111BB8D5FF00392F1D /* AppDelegate.swift in Sources */,
 				F582F2391BCB475C0084FF1D /* LocalStore.swift in Sources */,
 				F50769CA1BC8FAFA00A03297 /* MenuViewController.swift in Sources */,
+				F55C0E6B1BCCE8070078A368 /* CommentTableViewCell.swift in Sources */,
 				F57446FC1BCBA925004D837F /* StoryTableViewCell.swift in Sources */,
+				F55C0E691BCCD7060078A368 /* CommentsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
