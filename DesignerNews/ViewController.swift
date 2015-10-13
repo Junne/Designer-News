@@ -10,7 +10,7 @@ import UIKit
 import Spring
 import SwiftyJSON
 
-class ViewController: UITableViewController, LoginViewControllerDelegate {
+class ViewController: UITableViewController, LoginViewControllerDelegate, StoryTableViewCellDelegate {
 
     let transitionManager = TransitionManager()
     var stories: JSON! = []
@@ -52,6 +52,8 @@ class ViewController: UITableViewController, LoginViewControllerDelegate {
         refreshControl?.addTarget(self, action: "refreshStories", forControlEvents: UIControlEvents.ValueChanged)
         navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
         login.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "Avenir Next", size: 18)!], forState: UIControlState.Normal)
+        
+        refreshControl?.addTarget(self, action: "refreshStories", forControlEvents: UIControlEvents.ValueChanged)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -70,7 +72,8 @@ class ViewController: UITableViewController, LoginViewControllerDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("StoryCell") as! StoryTableViewCell
         let story = stories[indexPath.row]
-        
+        cell.configureWithStory(story)
+        cell.delegate = self        
         return cell
     }
     
@@ -79,9 +82,10 @@ class ViewController: UITableViewController, LoginViewControllerDelegate {
         
     }
     
-//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-//        return UIStatusBarStyle.LightContent
-//    }
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     @IBAction func menuButtonDidTouch(sender: AnyObject) {
         performSegueWithIdentifier("MenuSegue", sender: self)
     }
@@ -94,9 +98,34 @@ class ViewController: UITableViewController, LoginViewControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+extension ViewController {
+    // MARK: StoryTableViewCellDelegate
+    func storyTableViewCellDidTouchUpvote(cell: StoryTableViewCell, sender: AnyObject) {
+        if let token = LocalStore.getToken() {
+            let indexPath = tableView.indexPathForCell(cell)!
+            let story = stories[indexPath.row]
+            let storyId = story["id"].int!
+            DNService.upvoteStoryWithId(storyId, token: token
+                , response: { (successful) -> () in
+                    print(successful)
+            })
+            LocalStore.saveUpvotedStory(storyId)
+            cell.configureWithStory(story)
+        } else {
+            performSegueWithIdentifier("LoginSegue", sender: self)
+        }
+    }
+    
+    func storyTableViewCellDidTouchComment(cell: StoryTableViewCell, sender: AnyObject) {
+//        performSegueWithIdentifier("CommentsSegue", sender: cell)
+    }
+    
     // MARK: LoginViewControllerDelegate
     func loginViewControllerDidLogin(controller: LoginViewController) {
-        
+        loadStories(section, page: 1)
+        view.showLoading()
     }
 }
 

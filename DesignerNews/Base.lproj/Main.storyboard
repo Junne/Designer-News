@@ -6,16 +6,16 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="AvenirNext.ttc">
+            <string>AvenirNext-Medium</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
             <string>AvenirNext-DemiBold</string>
             <string>AvenirNext-Medium</string>
             <string>AvenirNext-Medium</string>
             <string>AvenirNext-Medium</string>
             <string>AvenirNext-Medium</string>
-            <string>AvenirNext-Regular</string>
-            <string>AvenirNext-Regular</string>
-            <string>AvenirNext-Medium</string>
-            <string>AvenirNext-Regular</string>
-            <string>AvenirNext-Regular</string>
             <string>AvenirNext-Regular</string>
             <string>AvenirNext-Regular</string>
         </mutableArray>
@@ -50,7 +50,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="mKR-Sw-6ZB" customClass="StoryTableViewCell" customModule="DesignerNews" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StoryCell" rowHeight="100" id="mKR-Sw-6ZB" customClass="StoryTableViewCell" customModule="DesignerNews" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mKR-Sw-6ZB" id="Np8-2W-2Hu">
@@ -64,7 +64,7 @@
                                                 <constraint firstAttribute="height" constant="20" id="oEf-WC-5eK"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUr-9W-ydQ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUr-9W-ydQ">
                                             <rect key="frame" x="38" y="7" width="240" height="25"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -99,6 +99,9 @@
                                             <state key="normal" title="813" image="icon-upvote">
                                                 <color key="titleColor" red="0.57268600089999999" green="0.63885527819999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="upvoteButtonDidTouch:" destination="mKR-Sw-6ZB" eventType="touchUpInside" id="rki-cx-hcL"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0A-ql-s4f" customClass="SpringButton" customModule="Spring">
                                             <rect key="frame" x="111" y="56" width="70" height="33"/>
@@ -111,6 +114,9 @@
                                             <state key="normal" title="244" image="icon-comment">
                                                 <color key="titleColor" red="0.57268600089999999" green="0.63885527819999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="commentButtonDidTouch:" destination="mKR-Sw-6ZB" eventType="touchUpInside" id="fSH-Wi-gDG"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -134,6 +140,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="authorLabel" destination="sf7-yc-NY4" id="7Ta-6h-G2l"/>
                                     <outlet property="avatarImageView" destination="xp0-yx-Pom" id="5fO-UH-T1Y"/>
                                     <outlet property="badgeImageView" destination="7e1-ac-obQ" id="bRW-7T-29X"/>
                                     <outlet property="commentButton" destination="L0A-ql-s4f" id="xF7-LR-PuC"/>

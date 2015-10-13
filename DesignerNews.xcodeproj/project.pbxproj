@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		886574B49266C3C6060F365D /* Pods_DesignerNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04520A88D6A2CAC425EE4BFD /* Pods_DesignerNews.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F50769CA1BC8FAFA00A03297 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50769C91BC8FAFA00A03297 /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		F55C0E661BCC93CA0078A368 /* refresh.wav in Resources */ = {isa = PBXBuildFile; fileRef = F55C0E641BCC93CA0078A368 /* refresh.wav */; settings = {ASSET_TAGS = (); }; };
+		F55C0E671BCC93CA0078A368 /* upvote.wav in Resources */ = {isa = PBXBuildFile; fileRef = F55C0E651BCC93CA0078A368 /* upvote.wav */; settings = {ASSET_TAGS = (); }; };
 		F56B2A111BB8D5FF00392F1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B2A101BB8D5FF00392F1D /* AppDelegate.swift */; };
 		F56B2A131BB8D5FF00392F1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B2A121BB8D5FF00392F1D /* ViewController.swift */; };
 		F56B2A161BB8D5FF00392F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56B2A141BB8D5FF00392F1D /* Main.storyboard */; };
@@ -45,6 +47,8 @@
 		0CCF40028AE6503C73D623F9 /* Pods-DesignerNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignerNews.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesignerNews/Pods-DesignerNews.debug.xcconfig"; sourceTree = "<group>"; };
 		62C96338C998F87D62D001BA /* Pods-DesignerNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesignerNews.release.xcconfig"; path = "Pods/Target Support Files/Pods-DesignerNews/Pods-DesignerNews.release.xcconfig"; sourceTree = "<group>"; };
 		F50769C91BC8FAFA00A03297 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		F55C0E641BCC93CA0078A368 /* refresh.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = refresh.wav; sourceTree = "<group>"; };
+		F55C0E651BCC93CA0078A368 /* upvote.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = upvote.wav; sourceTree = "<group>"; };
 		F56B2A0D1BB8D5FF00392F1D /* DesignerNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignerNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56B2A101BB8D5FF00392F1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56B2A121BB8D5FF00392F1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F55C0E631BCC93CA0078A368 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				F55C0E641BCC93CA0078A368 /* refresh.wav */,
+				F55C0E651BCC93CA0078A368 /* upvote.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		F56B2A041BB8D5FF00392F1D = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +146,7 @@
 		F56B2A0F1BB8D5FF00392F1D /* DesignerNews */ = {
 			isa = PBXGroup;
 			children = (
+				F55C0E631BCC93CA0078A368 /* Sounds */,
 				F56B2A101BB8D5FF00392F1D /* AppDelegate.swift */,
 				F582F2381BCB475C0084FF1D /* LocalStore.swift */,
 				F56B2A3F1BB8E91000392F1D /* LoginViewController.swift */,
@@ -275,6 +289,8 @@
 			files = (
 				F56B2A1B1BB8D5FF00392F1D /* LaunchScreen.storyboard in Resources */,
 				F56B2A181BB8D5FF00392F1D /* Assets.xcassets in Resources */,
+				F55C0E661BCC93CA0078A368 /* refresh.wav in Resources */,
+				F55C0E671BCC93CA0078A368 /* upvote.wav in Resources */,
 				F56B2A161BB8D5FF00392F1D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
