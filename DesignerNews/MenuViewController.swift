@@ -2,7 +2,7 @@
 //  MenuViewController.swift
 //  DesignerNews
 //
-//  Created by baijf on 10/10/15.
+//  Created by Junne on 10/10/15.
 //  Copyright © 2015 Junne. All rights reserved.
 //
 

@@ -27,7 +27,7 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarLeftConstraint: NSLayoutConstraint!
     
     @IBAction func upvoteButtonDidTouch(sender: AnyObject) {
-        delegate?.commentTableViewCellDidTouchComment(self)
+        delegate?.commentTableViewCellDidTouchUpvote(self)
         upvoteButton.animation = "pop"
         upvoteButton.force = 3
         upvoteButton.animate()

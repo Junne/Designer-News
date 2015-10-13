@@ -13,6 +13,7 @@
 		F55C0E671BCC93CA0078A368 /* upvote.wav in Resources */ = {isa = PBXBuildFile; fileRef = F55C0E651BCC93CA0078A368 /* upvote.wav */; settings = {ASSET_TAGS = (); }; };
 		F55C0E691BCCD7060078A368 /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55C0E681BCCD7060078A368 /* CommentsTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F55C0E6B1BCCE8070078A368 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55C0E6A1BCCE8070078A368 /* CommentTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		F55C0E6D1BCCFFC20078A368 /* ReplyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55C0E6C1BCCFFC20078A368 /* ReplyViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F56B2A111BB8D5FF00392F1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B2A101BB8D5FF00392F1D /* AppDelegate.swift */; };
 		F56B2A131BB8D5FF00392F1D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56B2A121BB8D5FF00392F1D /* ViewController.swift */; };
 		F56B2A161BB8D5FF00392F1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56B2A141BB8D5FF00392F1D /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		F55C0E651BCC93CA0078A368 /* upvote.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = upvote.wav; sourceTree = "<group>"; };
 		F55C0E681BCCD7060078A368 /* CommentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		F55C0E6A1BCCE8070078A368 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		F55C0E6C1BCCFFC20078A368 /* ReplyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplyViewController.swift; sourceTree = "<group>"; };
 		F56B2A0D1BB8D5FF00392F1D /* DesignerNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignerNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56B2A101BB8D5FF00392F1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F56B2A121BB8D5FF00392F1D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				F57446FB1BCBA925004D837F /* StoryTableViewCell.swift */,
 				F55C0E681BCCD7060078A368 /* CommentsTableViewController.swift */,
 				F55C0E6A1BCCE8070078A368 /* CommentTableViewCell.swift */,
+				F55C0E6C1BCCFFC20078A368 /* ReplyViewController.swift */,
 				F50769C91BC8FAFA00A03297 /* MenuViewController.swift */,
 				F57446F91BCB86D7004D837F /* LearnViewController.swift */,
 				F56B2A141BB8D5FF00392F1D /* Main.storyboard */,
@@ -380,6 +383,7 @@
 				F55C0E6B1BCCE8070078A368 /* CommentTableViewCell.swift in Sources */,
 				F57446FC1BCBA925004D837F /* StoryTableViewCell.swift in Sources */,
 				F55C0E691BCCD7060078A368 /* CommentsTableViewController.swift in Sources */,
+				F55C0E6D1BCCFFC20078A368 /* ReplyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

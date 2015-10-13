@@ -33,7 +33,7 @@ struct LocalStore {
     }
     
     static func isStoryUpvoted(storyId: Int) -> Bool {
-        return arrayForKey("upvotedStoriedsKey", containsId: storyId)
+        return arrayForKey("upvotedStoriesKey", containsId: storyId)
     }
     
     static func isCommentUpvoted(commentId: Int) -> Bool {
@@ -45,7 +45,6 @@ struct LocalStore {
     private static func arrayForKey(key: String, containsId id:Int) -> Bool {
         let elements = userDefaults.arrayForKey(key) as? [Int] ?? []
         return elements.contains(id)
-
     }
     
     private static func appendId(id: Int, toKey key: String) {

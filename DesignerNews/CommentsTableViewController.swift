@@ -10,11 +10,12 @@ import UIKit
 import Spring
 import SwiftyJSON
 
-class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate, CommentTableViewCellDelegate {
+class CommentsTableViewController: UITableViewController, StoryTableViewCellDelegate, CommentTableViewCellDelegate, ReplyViewControllerDelegate {
     
     var story: JSON!
     var comments: [JSON]!
     var transitionManager = TransitionManager()
+    weak var delegate: ReplyViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +68,32 @@ class CommentsTableViewController: UITableViewController, StoryTableViewCellDele
 }
 
 extension CommentsTableViewController {
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ReplySegue" {
+            let toView = segue.destinationViewController as! ReplyViewController
+            if let cell = sender as? CommentTableViewCell {
+                let indexPath = tableView.indexPathForCell(cell)!
+                let comment = comments[indexPath.row - 1]
+                toView.comment = comment
+            }
+            
+            if let _ = sender as? StoryTableViewCell {
+                toView.story = story
+            }
+            
+            toView.delegate = self
+            toView.transitioningDelegate = transitionManager
+        }
+    }
+    
+    // MARK: ReplyViewControllerDelegate
+    
+    func replyViewControllerDidSend(controller: ReplyViewController) {
+        reloadStory()
+    }
+    
+    
     // MARK: Helper
     func flattenComments(comments: [JSON]) -> [JSON] {
         let flattenedComments = comments.map(commentsForComment).reduce([], combine:+)
