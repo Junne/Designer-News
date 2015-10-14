@@ -11,22 +11,22 @@
             <string>AvenirNext-Regular</string>
             <string>AvenirNext-Regular</string>
             <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Medium</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
             <string>AvenirNext-DemiBold</string>
             <string>AvenirNext-Medium</string>
             <string>AvenirNext-Medium</string>
             <string>AvenirNext-Medium</string>
             <string>AvenirNext-Medium</string>
-            <string>AvenirNext-Regular</string>
-            <string>AvenirNext-Regular</string>
-            <string>AvenirNext-Regular</string>
-            <string>AvenirNext-Regular</string>
-            <string>AvenirNext-Regular</string>
-            <string>AvenirNext-Regular</string>
-            <string>AvenirNext-Medium</string>
-            <string>AvenirNext-Regular</string>
-            <string>AvenirNext-Regular</string>
-            <string>AvenirNext-Regular</string>
-            <string>AvenirNext-Regular</string>
             <string>AvenirNext-Regular</string>
             <string>AvenirNext-Regular</string>
             <string>AvenirNext-Regular</string>
@@ -53,7 +53,7 @@
             </objects>
             <point key="canvasLocation" x="305" y="366"/>
         </scene>
-        <!--View Controller-->
+        <!--Top Stories-->
         <scene sceneID="mC0-m4-CHL">
             <objects>
                 <tableViewController id="qlX-ab-ehX" customClass="ViewController" customModule="DesignerNews" customModuleProvider="target" sceneMemberID="viewController">
@@ -167,7 +167,7 @@
                             <outlet property="delegate" destination="qlX-ab-ehX" id="4SG-dB-NGZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="DWQ-lY-6EQ">
+                    <navigationItem key="navigationItem" title="Top Stories" id="DWQ-lY-6EQ">
                         <barButtonItem key="leftBarButtonItem" image="icon-hamburger" id="G8r-O0-ZQK">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -187,6 +187,7 @@
                         <segue destination="n0B-bT-Fhg" kind="presentation" identifier="LoginSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="OBb-9n-8kT"/>
                         <segue destination="WFf-Ty-mQ8" kind="presentation" identifier="MenuSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="QUq-qf-5pM"/>
                         <segue destination="fUS-ZP-tLf" kind="show" identifier="CommentsSegue" id="h3i-Od-PqS"/>
+                        <segue destination="iuz-gz-uFa" kind="presentation" identifier="WebSegue" id="dbS-5W-vKa"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSn-A1-x2i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -439,6 +440,95 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1qc-b8-MRC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1085" y="328"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="UsC-wf-wEq">
+            <objects>
+                <viewController id="iuz-gz-uFa" customClass="WebViewController" customModule="DesignerNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j2b-Yx-mho"/>
+                        <viewControllerLayoutGuide type="bottom" id="WJp-Ah-2AU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JtM-aA-vGF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="roO-Dn-snr">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QbL-Fr-jBn" customClass="DesignableButton" customModule="Spring">
+                                <rect key="frame" x="28" y="504" width="44" height="44"/>
+                                <color key="backgroundColor" red="0.2108125176" green="0.63520300100000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="jF1-D5-ycn"/>
+                                    <constraint firstAttribute="width" constant="44" id="xp7-tt-Vi4"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="icon-close"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideUp"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.10000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="closeButtonDidTouch:" destination="iuz-gz-uFa" eventType="touchUpInside" id="Het-OF-Z6k"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qxO-Fb-aCO" customClass="DesignableButton" customModule="Spring">
+                                <rect key="frame" x="82" y="504" width="44" height="44"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="8gu-aW-TLU"/>
+                                    <constraint firstAttribute="height" constant="44" id="91Y-Sv-SRF"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="action-share"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideUp"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="I7r-wr-Xk0">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="3"/>
+                                <color key="progressTintColor" red="0.2108125176" green="0.63520300100000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="roO-Dn-snr" secondAttribute="trailing" id="2k9-20-tG2"/>
+                            <constraint firstItem="I7r-wr-Xk0" firstAttribute="leading" secondItem="JtM-aA-vGF" secondAttribute="leading" id="4oO-fP-Cfc"/>
+                            <constraint firstItem="qxO-Fb-aCO" firstAttribute="bottom" secondItem="QbL-Fr-jBn" secondAttribute="bottom" id="9y5-Qn-vBN"/>
+                            <constraint firstItem="WJp-Ah-2AU" firstAttribute="top" secondItem="roO-Dn-snr" secondAttribute="bottom" id="Num-JH-anr"/>
+                            <constraint firstItem="I7r-wr-Xk0" firstAttribute="top" secondItem="JtM-aA-vGF" secondAttribute="top" id="Ufi-ku-axO"/>
+                            <constraint firstAttribute="trailing" secondItem="I7r-wr-Xk0" secondAttribute="trailing" id="YcD-dV-bjK"/>
+                            <constraint firstItem="qxO-Fb-aCO" firstAttribute="leading" secondItem="QbL-Fr-jBn" secondAttribute="trailing" constant="10" id="cxs-fd-dMC"/>
+                            <constraint firstItem="roO-Dn-snr" firstAttribute="top" secondItem="JtM-aA-vGF" secondAttribute="top" id="nVk-bC-kX9"/>
+                            <constraint firstItem="roO-Dn-snr" firstAttribute="leading" secondItem="QbL-Fr-jBn" secondAttribute="trailing" constant="-72" id="sTI-s3-i44"/>
+                            <constraint firstItem="QbL-Fr-jBn" firstAttribute="top" secondItem="roO-Dn-snr" secondAttribute="bottom" constant="-64" id="vH5-66-OGL"/>
+                            <constraint firstItem="roO-Dn-snr" firstAttribute="leading" secondItem="JtM-aA-vGF" secondAttribute="leading" id="ysH-qE-TpZ"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="progressView" destination="I7r-wr-Xk0" id="WQz-OR-Ebi"/>
+                        <outlet property="webView" destination="roO-Dn-snr" id="FqD-wN-1qj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2YC-DC-wpE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105" y="-409"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="hyk-ku-Oav">
@@ -931,6 +1021,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="action-share" width="19" height="27"/>
         <image name="bg-credits" width="280" height="140"/>
         <image name="big-credits" width="47" height="44"/>
         <image name="big-login" width="38" height="38"/>
@@ -950,6 +1041,6 @@
         <image name="input-outline" width="7" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="752-0M-oL7"/>
+        <segue reference="OBb-9n-8kT"/>
     </inferredMetricsTieBreakers>
 </document>

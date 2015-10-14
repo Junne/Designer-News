@@ -10,7 +10,7 @@ import UIKit
 import Spring
 import SwiftyJSON
 
-class ViewController: UITableViewController, LoginViewControllerDelegate, StoryTableViewCellDelegate {
+class ViewController: UITableViewController, LoginViewControllerDelegate, StoryTableViewCellDelegate, MenuViewControllerDelegate {
 
     let transitionManager = TransitionManager()
     var stories: JSON! = []
@@ -79,9 +79,9 @@ class ViewController: UITableViewController, LoginViewControllerDelegate, StoryT
         return cell
     }
     
-    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("WebSegue", sender: indexPath)
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -104,7 +104,7 @@ class ViewController: UITableViewController, LoginViewControllerDelegate, StoryT
 
 extension ViewController {
     
-    // MARK: Misc
+    // MARK: PrepareForSegue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "CommentsSegue" {
@@ -113,24 +113,45 @@ extension ViewController {
             toView.story = stories[indexPath.row]
         }
         if segue.identifier == "WebSegue" {
-//            let toView = segue.destinationViewController as! WebViewController
-//            let indexPath = sender as! NSIndexPath
-//            let url = stories[indexPath.row]["url"].string!
-//            toView.url = url
-//            
-//            UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
-//            
-//            toView.transitioningDelegate = transitionManager
+            let toView = segue.destinationViewController as! WebViewController
+            let indexPath = sender as! NSIndexPath
+            let url = stories[indexPath.row]["url"].string!
+            toView.url = url
+            UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Fade)
+            toView.transitioningDelegate = transitionManager
         }
         if segue.identifier == "MenuSegue" {
             let toView = segue.destinationViewController as! MenuViewController
-//            toView.delegate = self
+            toView.delegate = self
         }
         if segue.identifier == "LoginSegue" {
             let toView = segue.destinationViewController as! LoginViewController
             toView.delegate = self
         }
     }
+    
+    // MARK: MenuViewControllerDelegate
+    
+    func menuViewControllerDidTouchTop(controller: MenuViewController) {
+        view.showLoading()
+        loadStories("", page: 1)
+        navigationItem.title = "Top Stories"
+        section = ""
+    }
+    
+    func menuViewControllerDidTouchRecent(controller: MenuViewController) {
+        view.showLoading()
+        loadStories("recent", page: 1)
+        navigationItem.title = "Recent Stories"
+        section = "recent"
+    }
+    
+    func menuViewControllerDidTouchLogout(controller: MenuViewController) {
+        loadStories(section, page: 1)
+        view.showLoading()
+    }
+    
+    
     
     // MARK: StoryTableViewCellDelegate
     func storyTableViewCellDidTouchUpvote(cell: StoryTableViewCell, sender: AnyObject) {

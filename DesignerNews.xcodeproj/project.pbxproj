@@ -26,6 +26,7 @@
 		F57446FC1BCBA925004D837F /* StoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57446FB1BCBA925004D837F /* StoryTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		F582F2391BCB475C0084FF1D /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F582F2381BCB475C0084FF1D /* LocalStore.swift */; settings = {ASSET_TAGS = (); }; };
 		F582F23B1BCB4EBF0084FF1D /* DNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F582F23A1BCB4EBF0084FF1D /* DNService.swift */; settings = {ASSET_TAGS = (); }; };
+		F5EF7D4B1BCDE5B500BE9B43 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EF7D4A1BCDE5B500BE9B43 /* WebViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		F57446FB1BCBA925004D837F /* StoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTableViewCell.swift; sourceTree = "<group>"; };
 		F582F2381BCB475C0084FF1D /* LocalStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 		F582F23A1BCB4EBF0084FF1D /* DNService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNService.swift; sourceTree = "<group>"; };
+		F5EF7D4A1BCDE5B500BE9B43 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				F55C0E6C1BCCFFC20078A368 /* ReplyViewController.swift */,
 				F50769C91BC8FAFA00A03297 /* MenuViewController.swift */,
 				F57446F91BCB86D7004D837F /* LearnViewController.swift */,
+				F5EF7D4A1BCDE5B500BE9B43 /* WebViewController.swift */,
 				F56B2A141BB8D5FF00392F1D /* Main.storyboard */,
 				F56B2A171BB8D5FF00392F1D /* Assets.xcassets */,
 				F56B2A191BB8D5FF00392F1D /* LaunchScreen.storyboard */,
@@ -380,6 +383,7 @@
 				F56B2A111BB8D5FF00392F1D /* AppDelegate.swift in Sources */,
 				F582F2391BCB475C0084FF1D /* LocalStore.swift in Sources */,
 				F50769CA1BC8FAFA00A03297 /* MenuViewController.swift in Sources */,
+				F5EF7D4B1BCDE5B500BE9B43 /* WebViewController.swift in Sources */,
 				F55C0E6B1BCCE8070078A368 /* CommentTableViewCell.swift in Sources */,
 				F57446FC1BCBA925004D837F /* StoryTableViewCell.swift in Sources */,
 				F55C0E691BCCD7060078A368 /* CommentsTableViewController.swift in Sources */,
